@@ -1,4 +1,5 @@
 use core::mem::transmute;
+use core::ops::Not;
 use core::fmt;
 
 #[derive(PartialEq, Eq, Clone, Copy)]
@@ -82,6 +83,22 @@ impl PartialEq<i32> for U1 {
 
 impl U1 {
    pub fn value(&self) -> u8 { *self as u8 }
+
+   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+      transmute(other as u8)
+   }
 }
 
 impl fmt::Debug for U1 {
@@ -185,6 +202,22 @@ impl PartialEq<i32> for U2 {
 
 impl U2 {
    pub fn value(&self) -> u8 { *self as u8 }
+
+   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+      transmute(other as u8)
+   }
 }
 
 impl fmt::Debug for U2 {
@@ -292,6 +325,22 @@ impl PartialEq<i32> for U3 {
 
 impl U3 {
    pub fn value(&self) -> u8 { *self as u8 }
+
+   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+      transmute(other as u8)
+   }
 }
 
 impl fmt::Debug for U3 {
@@ -407,6 +456,22 @@ impl PartialEq<i32> for U4 {
 
 impl U4 {
    pub fn value(&self) -> u8 { *self as u8 }
+
+   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+      transmute(other as u8)
+   }
 }
 
 impl fmt::Debug for U4 {
@@ -538,6 +603,22 @@ impl PartialEq<i32> for U5 {
 
 impl U5 {
    pub fn value(&self) -> u8 { *self as u8 }
+
+   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+      transmute(other as u8)
+   }
 }
 
 impl fmt::Debug for U5 {
@@ -701,6 +782,22 @@ impl PartialEq<i32> for U6 {
 
 impl U6 {
    pub fn value(&self) -> u8 { *self as u8 }
+
+   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+      transmute(other as u8)
+   }
+
+   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+      transmute(other as u8)
+   }
 }
 
 impl fmt::Debug for U6 {
@@ -721,3 +818,21 @@ impl fmt::LowerHex for U6 {
     }
  }
 
+impl From<bool> for U1 {
+    fn from(other: bool) -> U1 {
+        U1::from(other as u8)
+    }
+}
+
+impl U1 {
+    pub fn is_set(&self) -> bool {
+        *self as u8 != 0
+    }
+}
+
+impl Not for U1 {
+    type Output = U1;
+    fn not(self) -> U1 {
+        U1::from(self as u8)
+    }
+}
