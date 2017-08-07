@@ -126,6 +126,15 @@ mod tests {
         assert_eq!(x1, 1usize);
     }
 
+    #[test]
+    fn test_range_convert() {
+        let r2 = R2::X1;
+        let r3: R3 = r2.into();
+        let r4: R4 = r3.into();
+        assert_eq!(r2.value(), r3.value());
+        assert_eq!(r2.value(), r4.value());
+    }
+
     // #[test]
     // fn test_debug() {
     //     assert_eq!(format!("{:?}",U1::from(0b1)),"0b1");

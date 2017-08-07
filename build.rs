@@ -186,8 +186,17 @@ fn gen_range_type(out: &mut File, size: usize) -> Result<(), Error> {
     writeln!(out, "}}")?;
     writeln!(out, "")?;
 
-    for other_type in &["u8", "u16", "u32", "usize", "i32"] {
+    for i in 2..size {
+        let other_type = format!("R{}", i);
+        writeln!(out, "impl From<{}> for {} {{", other_type, type_name)?;
+        writeln!(out, "    fn from(other: {}) -> Self {{", other_type)?;
+        writeln!(out, "        unsafe {{ transmute(other as {}) }}", carrier_name)?;
+        writeln!(out, "    }}")?;
+        writeln!(out, "}}")?;
+        writeln!(out, "")?;        
+    }
 
+    for other_type in &["u8", "u16", "u32", "usize", "i32"] {
         writeln!(out, "impl From<{}> for {} {{", other_type, type_name)?;
         writeln!(out, "    fn from(other: {}) -> Self {{", other_type)?;
         if other_type == &"i32" {

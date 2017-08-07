@@ -149,6 +149,12 @@ pub enum R3 {
     X2 = 0x2,
 }
 
+impl From<R2> for R3 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R3 {
     fn from(other: u8) -> Self {
         assert!(other < 0x3);
@@ -289,6 +295,18 @@ pub enum R4 {
     X1 = 0x1,
     X2 = 0x2,
     X3 = 0x3,
+}
+
+impl From<R2> for R4 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R4 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R4 {
@@ -434,6 +452,24 @@ pub enum R5 {
     X4 = 0x4,
 }
 
+impl From<R2> for R5 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R5 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R5 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R5 {
     fn from(other: u8) -> Self {
         assert!(other < 0x5);
@@ -576,6 +612,30 @@ pub enum R6 {
     X3 = 0x3,
     X4 = 0x4,
     X5 = 0x5,
+}
+
+impl From<R2> for R6 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R6 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R6 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R6 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R6 {
@@ -723,6 +783,36 @@ pub enum R7 {
     X6 = 0x6,
 }
 
+impl From<R2> for R7 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R7 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R7 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R7 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R7 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R7 {
     fn from(other: u8) -> Self {
         assert!(other < 0x7);
@@ -867,6 +957,42 @@ pub enum R8 {
     X5 = 0x5,
     X6 = 0x6,
     X7 = 0x7,
+}
+
+impl From<R2> for R8 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R8 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R8 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R8 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R8 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R8 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R8 {
@@ -1016,6 +1142,48 @@ pub enum R9 {
     X8 = 0x8,
 }
 
+impl From<R2> for R9 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R9 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R9 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R9 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R9 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R9 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R9 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R9 {
     fn from(other: u8) -> Self {
         assert!(other < 0x9);
@@ -1162,6 +1330,54 @@ pub enum R10 {
     X7 = 0x7,
     X8 = 0x8,
     X9 = 0x9,
+}
+
+impl From<R2> for R10 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R10 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R10 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R10 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R10 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R10 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R10 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R10 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R10 {
@@ -1313,6 +1529,60 @@ pub enum R11 {
     Xa = 0xa,
 }
 
+impl From<R2> for R11 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R11 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R11 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R11 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R11 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R11 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R11 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R11 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R11 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R11 {
     fn from(other: u8) -> Self {
         assert!(other < 0xb);
@@ -1461,6 +1731,66 @@ pub enum R12 {
     X9 = 0x9,
     Xa = 0xa,
     Xb = 0xb,
+}
+
+impl From<R2> for R12 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R12 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R12 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R12 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R12 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R12 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R12 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R12 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R12 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R12 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R12 {
@@ -1614,6 +1944,72 @@ pub enum R13 {
     Xc = 0xc,
 }
 
+impl From<R2> for R13 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R13 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R13 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R13 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R13 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R13 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R13 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R13 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R13 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R13 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R13 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R13 {
     fn from(other: u8) -> Self {
         assert!(other < 0xd);
@@ -1764,6 +2160,78 @@ pub enum R14 {
     Xb = 0xb,
     Xc = 0xc,
     Xd = 0xd,
+}
+
+impl From<R2> for R14 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R14 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R14 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R14 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R14 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R14 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R14 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R14 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R14 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R14 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R14 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R14 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R14 {
@@ -1919,6 +2387,84 @@ pub enum R15 {
     Xe = 0xe,
 }
 
+impl From<R2> for R15 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R15 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R15 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R15 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R15 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R15 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R15 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R15 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R15 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R15 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R15 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R15 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R15 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R15 {
     fn from(other: u8) -> Self {
         assert!(other < 0xf);
@@ -2071,6 +2617,90 @@ pub enum R16 {
     Xd = 0xd,
     Xe = 0xe,
     Xf = 0xf,
+}
+
+impl From<R2> for R16 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R16 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R16 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R16 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R16 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R16 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R16 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R16 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R16 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R16 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R16 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R16 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R16 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R16 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R16 {
@@ -2228,6 +2858,96 @@ pub enum R17 {
     X10 = 0x10,
 }
 
+impl From<R2> for R17 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R17 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R17 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R17 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R17 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R17 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R17 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R17 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R17 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R17 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R17 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R17 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R17 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R17 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R17 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R17 {
     fn from(other: u8) -> Self {
         assert!(other < 0x11);
@@ -2382,6 +3102,102 @@ pub enum R18 {
     X0f = 0x0f,
     X10 = 0x10,
     X11 = 0x11,
+}
+
+impl From<R2> for R18 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R18 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R18 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R18 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R18 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R18 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R18 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R18 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R18 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R18 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R18 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R18 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R18 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R18 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R18 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R18 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R18 {
@@ -2541,6 +3357,108 @@ pub enum R19 {
     X12 = 0x12,
 }
 
+impl From<R2> for R19 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R19 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R19 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R19 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R19 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R19 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R19 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R19 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R19 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R19 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R19 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R19 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R19 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R19 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R19 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R19 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R19 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R19 {
     fn from(other: u8) -> Self {
         assert!(other < 0x13);
@@ -2697,6 +3615,114 @@ pub enum R20 {
     X11 = 0x11,
     X12 = 0x12,
     X13 = 0x13,
+}
+
+impl From<R2> for R20 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R20 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R20 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R20 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R20 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R20 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R20 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R20 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R20 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R20 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R20 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R20 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R20 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R20 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R20 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R20 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R20 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R20 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R20 {
@@ -2858,6 +3884,120 @@ pub enum R21 {
     X14 = 0x14,
 }
 
+impl From<R2> for R21 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R21 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R21 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R21 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R21 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R21 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R21 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R21 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R21 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R21 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R21 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R21 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R21 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R21 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R21 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R21 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R21 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R21 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R21 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R21 {
     fn from(other: u8) -> Self {
         assert!(other < 0x15);
@@ -3016,6 +4156,126 @@ pub enum R22 {
     X13 = 0x13,
     X14 = 0x14,
     X15 = 0x15,
+}
+
+impl From<R2> for R22 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R22 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R22 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R22 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R22 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R22 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R22 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R22 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R22 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R22 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R22 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R22 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R22 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R22 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R22 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R22 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R22 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R22 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R22 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R22 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R22 {
@@ -3179,6 +4439,132 @@ pub enum R23 {
     X16 = 0x16,
 }
 
+impl From<R2> for R23 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R23 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R23 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R23 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R23 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R23 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R23 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R23 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R23 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R23 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R23 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R23 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R23 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R23 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R23 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R23 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R23 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R23 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R23 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R23 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R22> for R23 {
+    fn from(other: R22) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R23 {
     fn from(other: u8) -> Self {
         assert!(other < 0x17);
@@ -3339,6 +4725,138 @@ pub enum R24 {
     X15 = 0x15,
     X16 = 0x16,
     X17 = 0x17,
+}
+
+impl From<R2> for R24 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R24 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R24 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R24 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R24 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R24 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R24 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R24 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R24 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R24 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R24 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R24 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R24 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R24 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R24 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R24 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R24 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R24 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R24 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R24 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R22> for R24 {
+    fn from(other: R22) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R23> for R24 {
+    fn from(other: R23) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R24 {
@@ -3504,6 +5022,144 @@ pub enum R25 {
     X18 = 0x18,
 }
 
+impl From<R2> for R25 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R25 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R25 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R25 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R25 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R25 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R25 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R25 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R25 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R25 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R25 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R25 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R25 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R25 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R25 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R25 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R25 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R25 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R25 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R25 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R22> for R25 {
+    fn from(other: R22) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R23> for R25 {
+    fn from(other: R23) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R24> for R25 {
+    fn from(other: R24) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R25 {
     fn from(other: u8) -> Self {
         assert!(other < 0x19);
@@ -3666,6 +5322,150 @@ pub enum R26 {
     X17 = 0x17,
     X18 = 0x18,
     X19 = 0x19,
+}
+
+impl From<R2> for R26 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R26 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R26 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R26 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R26 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R26 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R26 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R26 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R26 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R26 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R26 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R26 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R26 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R26 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R26 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R26 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R26 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R26 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R26 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R26 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R22> for R26 {
+    fn from(other: R22) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R23> for R26 {
+    fn from(other: R23) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R24> for R26 {
+    fn from(other: R24) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R25> for R26 {
+    fn from(other: R25) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R26 {
@@ -3833,6 +5633,156 @@ pub enum R27 {
     X1a = 0x1a,
 }
 
+impl From<R2> for R27 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R27 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R27 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R27 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R27 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R27 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R27 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R27 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R27 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R27 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R27 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R27 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R27 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R27 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R27 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R27 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R27 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R27 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R27 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R27 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R22> for R27 {
+    fn from(other: R22) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R23> for R27 {
+    fn from(other: R23) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R24> for R27 {
+    fn from(other: R24) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R25> for R27 {
+    fn from(other: R25) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R26> for R27 {
+    fn from(other: R26) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R27 {
     fn from(other: u8) -> Self {
         assert!(other < 0x1b);
@@ -3997,6 +5947,162 @@ pub enum R28 {
     X19 = 0x19,
     X1a = 0x1a,
     X1b = 0x1b,
+}
+
+impl From<R2> for R28 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R28 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R28 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R28 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R28 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R28 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R28 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R28 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R28 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R28 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R28 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R28 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R28 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R28 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R28 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R28 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R28 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R28 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R28 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R28 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R22> for R28 {
+    fn from(other: R22) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R23> for R28 {
+    fn from(other: R23) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R24> for R28 {
+    fn from(other: R24) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R25> for R28 {
+    fn from(other: R25) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R26> for R28 {
+    fn from(other: R26) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R27> for R28 {
+    fn from(other: R27) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R28 {
@@ -4166,6 +6272,168 @@ pub enum R29 {
     X1c = 0x1c,
 }
 
+impl From<R2> for R29 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R29 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R29 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R29 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R29 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R29 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R29 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R29 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R29 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R29 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R29 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R29 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R29 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R29 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R29 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R29 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R29 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R29 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R29 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R29 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R22> for R29 {
+    fn from(other: R22) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R23> for R29 {
+    fn from(other: R23) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R24> for R29 {
+    fn from(other: R24) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R25> for R29 {
+    fn from(other: R25) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R26> for R29 {
+    fn from(other: R26) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R27> for R29 {
+    fn from(other: R27) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R28> for R29 {
+    fn from(other: R28) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R29 {
     fn from(other: u8) -> Self {
         assert!(other < 0x1d);
@@ -4332,6 +6600,174 @@ pub enum R30 {
     X1b = 0x1b,
     X1c = 0x1c,
     X1d = 0x1d,
+}
+
+impl From<R2> for R30 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R30 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R30 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R30 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R30 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R30 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R30 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R30 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R30 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R30 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R30 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R30 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R30 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R30 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R30 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R30 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R30 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R30 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R30 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R30 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R22> for R30 {
+    fn from(other: R22) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R23> for R30 {
+    fn from(other: R23) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R24> for R30 {
+    fn from(other: R24) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R25> for R30 {
+    fn from(other: R25) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R26> for R30 {
+    fn from(other: R26) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R27> for R30 {
+    fn from(other: R27) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R28> for R30 {
+    fn from(other: R28) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R29> for R30 {
+    fn from(other: R29) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R30 {
@@ -4503,6 +6939,180 @@ pub enum R31 {
     X1e = 0x1e,
 }
 
+impl From<R2> for R31 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R31 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R31 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R31 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R31 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R31 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R31 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R31 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R31 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R31 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R31 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R31 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R31 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R31 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R31 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R31 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R31 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R31 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R31 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R31 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R22> for R31 {
+    fn from(other: R22) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R23> for R31 {
+    fn from(other: R23) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R24> for R31 {
+    fn from(other: R24) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R25> for R31 {
+    fn from(other: R25) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R26> for R31 {
+    fn from(other: R26) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R27> for R31 {
+    fn from(other: R27) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R28> for R31 {
+    fn from(other: R28) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R29> for R31 {
+    fn from(other: R29) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R30> for R31 {
+    fn from(other: R30) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
 impl From<u8> for R31 {
     fn from(other: u8) -> Self {
         assert!(other < 0x1f);
@@ -4671,6 +7281,186 @@ pub enum R32 {
     X1d = 0x1d,
     X1e = 0x1e,
     X1f = 0x1f,
+}
+
+impl From<R2> for R32 {
+    fn from(other: R2) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R3> for R32 {
+    fn from(other: R3) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R4> for R32 {
+    fn from(other: R4) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R5> for R32 {
+    fn from(other: R5) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R6> for R32 {
+    fn from(other: R6) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R7> for R32 {
+    fn from(other: R7) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R8> for R32 {
+    fn from(other: R8) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R9> for R32 {
+    fn from(other: R9) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R10> for R32 {
+    fn from(other: R10) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R11> for R32 {
+    fn from(other: R11) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R12> for R32 {
+    fn from(other: R12) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R13> for R32 {
+    fn from(other: R13) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R14> for R32 {
+    fn from(other: R14) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R15> for R32 {
+    fn from(other: R15) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R16> for R32 {
+    fn from(other: R16) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R17> for R32 {
+    fn from(other: R17) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R18> for R32 {
+    fn from(other: R18) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R19> for R32 {
+    fn from(other: R19) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R20> for R32 {
+    fn from(other: R20) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R21> for R32 {
+    fn from(other: R21) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R22> for R32 {
+    fn from(other: R22) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R23> for R32 {
+    fn from(other: R23) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R24> for R32 {
+    fn from(other: R24) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R25> for R32 {
+    fn from(other: R25) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R26> for R32 {
+    fn from(other: R26) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R27> for R32 {
+    fn from(other: R27) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R28> for R32 {
+    fn from(other: R28) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R29> for R32 {
+    fn from(other: R29) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R30> for R32 {
+    fn from(other: R30) -> Self {
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R31> for R32 {
+    fn from(other: R31) -> Self {
+        unsafe { transmute(other as usize) }
+    }
 }
 
 impl From<u8> for R32 {
