@@ -231,28 +231,34 @@ macro_rules! impl_u32 {
         pub struct $B(u32);
 
         impl $B {
+            #[inline]
             pub fn value(&self) -> u32 {
                 self.0
             }
 
+            #[inline]
             pub unsafe fn from_u8_unchecked(other: u8) -> Self {
                 $B(other as u32)
             }
 
+            #[inline]
             pub unsafe fn from_u16_unchecked(other: u16) -> Self {
                 $B(other as u32)
             }
 
+            #[inline]
             pub unsafe fn from_u32_unchecked(other: u32) -> Self {
                 $B(other as u32)
             }
 
+            #[inline]
             pub unsafe fn from_usize_unchecked(other: usize) -> Self {
                 $B(other as u32)
             }            
         }
 
         impl From<i32> for $B {
+            #[inline]
             fn from(other: i32) -> Self {
                 assert!(other > 0);
                 assert!(other as u32 & !$m == 0);
@@ -261,6 +267,7 @@ macro_rules! impl_u32 {
         }
 
         impl From<usize> for $B {
+            #[inline]
             fn from(other: usize) -> Self {
                 assert!(other & !$m == 0);
                 $B(other as u32)
@@ -268,6 +275,7 @@ macro_rules! impl_u32 {
         }
 
         impl From<u32> for $B {
+            #[inline]
             fn from(other: u32) -> Self {
                 assert!(other & !$m == 0);
                 $B(other as u32)
@@ -275,24 +283,28 @@ macro_rules! impl_u32 {
         }
 
         impl From<u16> for $B {
+            #[inline]
             fn from(other: u16) -> Self {
                 $B(other as u32)
             }
         }
 
         impl From<u8> for $B {
+            #[inline]
             fn from(other: u8) -> Self {
                 $B(other as u32)
             }
         }
 
         impl From<$B> for u32 {
+            #[inline]
             fn from(other: $B) -> Self {
                 other.0.into()
             }
         }
 
         impl From<$B> for u16 {
+            #[inline]
             fn from(other: $B) -> Self {
                 assert!((other.0 & !0xffff) == 0);
                 other.0 as u16
@@ -300,6 +312,7 @@ macro_rules! impl_u32 {
         }
 
         impl From<$B> for u8 {
+            #[inline]
             fn from(other: $B) -> Self {
                 assert!((other.0 & !0xff) == 0);
                 other.0 as u8
@@ -307,6 +320,7 @@ macro_rules! impl_u32 {
         }
 
         impl PartialEq<i32> for $B {
+            #[inline]
             fn eq(&self, other: &i32) -> bool {
                 self.0 == *other as u32
             }
@@ -327,12 +341,14 @@ macro_rules! impl_u32 {
         }
 
         impl fmt::Display for $B {
+            #[inline]
             fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
                 self.0.fmt(f)     
             }
         }
 
         impl fmt::LowerHex for $B {
+            #[inline]
             fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
                 self.0.fmt(f)     
             }

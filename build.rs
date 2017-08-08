@@ -84,6 +84,7 @@ fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
     for other_type in &["u8", "u16", "u32", "usize", "i32"] {
 
         writeln!(out, "impl From<{}> for {} {{", other_type, type_name)?;
+        writeln!(out, "    #[inline]")?;
         writeln!(out, "    fn from(other: {}) -> Self {{", other_type)?;
         if other_type == &"i32" {
             writeln!(out, "        assert!(other >= 0);")?;            
@@ -95,6 +96,7 @@ fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
         writeln!(out, "")?;
 
         writeln!(out, "impl From<{}> for {} {{", type_name, other_type)?;
+        writeln!(out, "    #[inline]")?;
         writeln!(out, "    fn from(other: {}) -> {} {{", type_name, other_type)?;
         writeln!(out, "        other as {}", other_type)?;
         writeln!(out, "    }}")?;
@@ -103,6 +105,7 @@ fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
         
     }
     writeln!(out, "impl PartialEq<i32> for {} {{", type_name)?;
+    writeln!(out, "    #[inline]")?;
     writeln!(out, "    fn eq(&self, other: &i32) -> bool {{")?;
     writeln!(out, "        *self as i32 == *other ")?;
     writeln!(out, "    }}")?;
@@ -110,20 +113,25 @@ fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
     writeln!(out, "")?;
        
     writeln!(out, "impl {} {{", type_name)?;
+    writeln!(out, "   #[inline]")?;
     writeln!(out, "   pub fn value(&self) -> u8 {{ *self as u8 }}")?;
     writeln!(out, "")?;    
+    writeln!(out, "   #[inline]")?;
     writeln!(out, "   pub unsafe fn from_u8_unchecked(other: u8) -> Self {{")?;
     writeln!(out, "      transmute(other as {})", carrier_name)?;
     writeln!(out, "   }}")?;
     writeln!(out, "")?;
+    writeln!(out, "   #[inline]")?;
     writeln!(out, "   pub unsafe fn from_u16_unchecked(other: u16) -> Self {{")?;
     writeln!(out, "      transmute(other as {})", carrier_name)?;
     writeln!(out, "   }}")?;
     writeln!(out, "")?;
+    writeln!(out, "   #[inline]")?;
     writeln!(out, "   pub unsafe fn from_u32_unchecked(other: u32) -> Self {{")?;
     writeln!(out, "      transmute(other as {})", carrier_name)?;
     writeln!(out, "   }}")?;
     writeln!(out, "")?;
+    writeln!(out, "   #[inline]")?;
     writeln!(out, "   pub unsafe fn from_usize_unchecked(other: usize) -> Self {{")?;
     writeln!(out, "      transmute(other as {})", carrier_name)?;
     writeln!(out, "   }}")?;
@@ -139,6 +147,7 @@ fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
 
 
     writeln!(out, "impl fmt::Display for {} {{", type_name)?;
+    writeln!(out, "    #[inline]")?;    
     writeln!(out, "    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{")?;
     writeln!(out, "       (*self as u8).fmt(f)")?;
     writeln!(out, "    }}")?;
@@ -146,6 +155,7 @@ fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
     writeln!(out, "")?;
 
     writeln!(out, "impl fmt::LowerHex for {} {{", type_name)?;
+    writeln!(out, "    #[inline]")?;    
     writeln!(out, "    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{")?;
     writeln!(out, "       (*self as u8).fmt(f)")?;
     writeln!(out, "    }}")?;
@@ -189,6 +199,7 @@ fn gen_range_type(out: &mut File, size: usize) -> Result<(), Error> {
     for i in 2..size {
         let other_type = format!("R{}", i);
         writeln!(out, "impl From<{}> for {} {{", other_type, type_name)?;
+        writeln!(out, "    #[inline]")?;
         writeln!(out, "    fn from(other: {}) -> Self {{", other_type)?;
         writeln!(out, "        unsafe {{ transmute(other as {}) }}", carrier_name)?;
         writeln!(out, "    }}")?;
@@ -198,6 +209,7 @@ fn gen_range_type(out: &mut File, size: usize) -> Result<(), Error> {
 
     for other_type in &["u8", "u16", "u32", "usize", "i32"] {
         writeln!(out, "impl From<{}> for {} {{", other_type, type_name)?;
+        writeln!(out, "    #[inline]")?;
         writeln!(out, "    fn from(other: {}) -> Self {{", other_type)?;
         if other_type == &"i32" {
             writeln!(out, "        assert!(other >= 0);")?;            
@@ -209,6 +221,7 @@ fn gen_range_type(out: &mut File, size: usize) -> Result<(), Error> {
         writeln!(out, "")?;
 
         writeln!(out, "impl From<{}> for {} {{", type_name, other_type)?;
+        writeln!(out, "    #[inline]")?;
         writeln!(out, "    fn from(other: {}) -> {} {{", type_name, other_type)?;
         writeln!(out, "        other as {}", other_type)?;
         writeln!(out, "    }}")?;
@@ -216,6 +229,7 @@ fn gen_range_type(out: &mut File, size: usize) -> Result<(), Error> {
         writeln!(out, "")?;
         
         writeln!(out, "impl PartialEq<{}> for {} {{", other_type, type_name)?;
+        writeln!(out, "    #[inline]")?;
         writeln!(out, "    fn eq(&self, other: &{}) -> bool {{", other_type)?;
         writeln!(out, "        *self as usize == *other as usize")?;
         writeln!(out, "    }}")?;
@@ -225,20 +239,25 @@ fn gen_range_type(out: &mut File, size: usize) -> Result<(), Error> {
 
        
     writeln!(out, "impl {} {{", type_name)?;
+    writeln!(out, "   #[inline]")?;
     writeln!(out, "   pub fn value(&self) -> usize {{ *self as usize }}")?;
     writeln!(out, "")?;    
+    writeln!(out, "   #[inline]")?;
     writeln!(out, "   pub unsafe fn from_u8_unchecked(other: u8) -> Self {{")?;
     writeln!(out, "      transmute(other as {})", carrier_name)?;
     writeln!(out, "   }}")?;
     writeln!(out, "")?;
+    writeln!(out, "   #[inline]")?;
     writeln!(out, "   pub unsafe fn from_u16_unchecked(other: u16) -> Self {{")?;
     writeln!(out, "      transmute(other as {})", carrier_name)?;
     writeln!(out, "   }}")?;
     writeln!(out, "")?;
+    writeln!(out, "   #[inline]")?;
     writeln!(out, "   pub unsafe fn from_u32_unchecked(other: u32) -> Self {{")?;
     writeln!(out, "      transmute(other as {})", carrier_name)?;
     writeln!(out, "   }}")?;
     writeln!(out, "")?;
+    writeln!(out, "   #[inline]")?;
     writeln!(out, "   pub unsafe fn from_usize_unchecked(other: usize) -> Self {{")?;
     writeln!(out, "      transmute(other as {})", carrier_name)?;
     writeln!(out, "   }}")?;
@@ -253,6 +272,7 @@ fn gen_range_type(out: &mut File, size: usize) -> Result<(), Error> {
 
 
     writeln!(out, "impl fmt::Display for {} {{", type_name)?;
+    writeln!(out, "    #[inline]")?;    
     writeln!(out, "    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{")?;
     writeln!(out, "       (*self as u8).fmt(f)")?;
     writeln!(out, "    }}")?;
@@ -260,6 +280,7 @@ fn gen_range_type(out: &mut File, size: usize) -> Result<(), Error> {
     writeln!(out, "")?;
 
     writeln!(out, "impl fmt::LowerHex for {} {{", type_name)?;
+    writeln!(out, "    #[inline]")?;    
     writeln!(out, "    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{")?;
     writeln!(out, "       (*self as u8).fmt(f)")?;
     writeln!(out, "    }}")?;

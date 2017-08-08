@@ -10,6 +10,7 @@ pub enum U1 {
 }
 
 impl From<u8> for U1 {
+    #[inline]
     fn from(other: u8) -> Self {
         assert!(other & !0b1 == 0);
         unsafe { transmute(other as u8) }
@@ -17,12 +18,14 @@ impl From<u8> for U1 {
 }
 
 impl From<U1> for u8 {
+    #[inline]
     fn from(other: U1) -> u8 {
         other as u8
     }
 }
 
 impl From<u16> for U1 {
+    #[inline]
     fn from(other: u16) -> Self {
         assert!(other & !0b1 == 0);
         unsafe { transmute(other as u8) }
@@ -30,12 +33,14 @@ impl From<u16> for U1 {
 }
 
 impl From<U1> for u16 {
+    #[inline]
     fn from(other: U1) -> u16 {
         other as u16
     }
 }
 
 impl From<u32> for U1 {
+    #[inline]
     fn from(other: u32) -> Self {
         assert!(other & !0b1 == 0);
         unsafe { transmute(other as u8) }
@@ -43,12 +48,14 @@ impl From<u32> for U1 {
 }
 
 impl From<U1> for u32 {
+    #[inline]
     fn from(other: U1) -> u32 {
         other as u32
     }
 }
 
 impl From<usize> for U1 {
+    #[inline]
     fn from(other: usize) -> Self {
         assert!(other & !0b1 == 0);
         unsafe { transmute(other as u8) }
@@ -56,12 +63,14 @@ impl From<usize> for U1 {
 }
 
 impl From<U1> for usize {
+    #[inline]
     fn from(other: U1) -> usize {
         other as usize
     }
 }
 
 impl From<i32> for U1 {
+    #[inline]
     fn from(other: i32) -> Self {
         assert!(other >= 0);
         assert!(other & !0b1 == 0);
@@ -70,32 +79,39 @@ impl From<i32> for U1 {
 }
 
 impl From<U1> for i32 {
+    #[inline]
     fn from(other: U1) -> i32 {
         other as i32
     }
 }
 
 impl PartialEq<i32> for U1 {
+    #[inline]
     fn eq(&self, other: &i32) -> bool {
         *self as i32 == *other 
     }
 }
 
 impl U1 {
+   #[inline]
    pub fn value(&self) -> u8 { *self as u8 }
 
+   #[inline]
    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
       transmute(other as u8)
    }
@@ -108,12 +124,14 @@ impl fmt::Debug for U1 {
  }
 
 impl fmt::Display for U1 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
  }
 
 impl fmt::LowerHex for U1 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
@@ -129,6 +147,7 @@ pub enum U2 {
 }
 
 impl From<u8> for U2 {
+    #[inline]
     fn from(other: u8) -> Self {
         assert!(other & !0b11 == 0);
         unsafe { transmute(other as u8) }
@@ -136,12 +155,14 @@ impl From<u8> for U2 {
 }
 
 impl From<U2> for u8 {
+    #[inline]
     fn from(other: U2) -> u8 {
         other as u8
     }
 }
 
 impl From<u16> for U2 {
+    #[inline]
     fn from(other: u16) -> Self {
         assert!(other & !0b11 == 0);
         unsafe { transmute(other as u8) }
@@ -149,12 +170,14 @@ impl From<u16> for U2 {
 }
 
 impl From<U2> for u16 {
+    #[inline]
     fn from(other: U2) -> u16 {
         other as u16
     }
 }
 
 impl From<u32> for U2 {
+    #[inline]
     fn from(other: u32) -> Self {
         assert!(other & !0b11 == 0);
         unsafe { transmute(other as u8) }
@@ -162,12 +185,14 @@ impl From<u32> for U2 {
 }
 
 impl From<U2> for u32 {
+    #[inline]
     fn from(other: U2) -> u32 {
         other as u32
     }
 }
 
 impl From<usize> for U2 {
+    #[inline]
     fn from(other: usize) -> Self {
         assert!(other & !0b11 == 0);
         unsafe { transmute(other as u8) }
@@ -175,12 +200,14 @@ impl From<usize> for U2 {
 }
 
 impl From<U2> for usize {
+    #[inline]
     fn from(other: U2) -> usize {
         other as usize
     }
 }
 
 impl From<i32> for U2 {
+    #[inline]
     fn from(other: i32) -> Self {
         assert!(other >= 0);
         assert!(other & !0b11 == 0);
@@ -189,32 +216,39 @@ impl From<i32> for U2 {
 }
 
 impl From<U2> for i32 {
+    #[inline]
     fn from(other: U2) -> i32 {
         other as i32
     }
 }
 
 impl PartialEq<i32> for U2 {
+    #[inline]
     fn eq(&self, other: &i32) -> bool {
         *self as i32 == *other 
     }
 }
 
 impl U2 {
+   #[inline]
    pub fn value(&self) -> u8 { *self as u8 }
 
+   #[inline]
    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
       transmute(other as u8)
    }
@@ -227,12 +261,14 @@ impl fmt::Debug for U2 {
  }
 
 impl fmt::Display for U2 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
  }
 
 impl fmt::LowerHex for U2 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
@@ -252,6 +288,7 @@ pub enum U3 {
 }
 
 impl From<u8> for U3 {
+    #[inline]
     fn from(other: u8) -> Self {
         assert!(other & !0b111 == 0);
         unsafe { transmute(other as u8) }
@@ -259,12 +296,14 @@ impl From<u8> for U3 {
 }
 
 impl From<U3> for u8 {
+    #[inline]
     fn from(other: U3) -> u8 {
         other as u8
     }
 }
 
 impl From<u16> for U3 {
+    #[inline]
     fn from(other: u16) -> Self {
         assert!(other & !0b111 == 0);
         unsafe { transmute(other as u8) }
@@ -272,12 +311,14 @@ impl From<u16> for U3 {
 }
 
 impl From<U3> for u16 {
+    #[inline]
     fn from(other: U3) -> u16 {
         other as u16
     }
 }
 
 impl From<u32> for U3 {
+    #[inline]
     fn from(other: u32) -> Self {
         assert!(other & !0b111 == 0);
         unsafe { transmute(other as u8) }
@@ -285,12 +326,14 @@ impl From<u32> for U3 {
 }
 
 impl From<U3> for u32 {
+    #[inline]
     fn from(other: U3) -> u32 {
         other as u32
     }
 }
 
 impl From<usize> for U3 {
+    #[inline]
     fn from(other: usize) -> Self {
         assert!(other & !0b111 == 0);
         unsafe { transmute(other as u8) }
@@ -298,12 +341,14 @@ impl From<usize> for U3 {
 }
 
 impl From<U3> for usize {
+    #[inline]
     fn from(other: U3) -> usize {
         other as usize
     }
 }
 
 impl From<i32> for U3 {
+    #[inline]
     fn from(other: i32) -> Self {
         assert!(other >= 0);
         assert!(other & !0b111 == 0);
@@ -312,32 +357,39 @@ impl From<i32> for U3 {
 }
 
 impl From<U3> for i32 {
+    #[inline]
     fn from(other: U3) -> i32 {
         other as i32
     }
 }
 
 impl PartialEq<i32> for U3 {
+    #[inline]
     fn eq(&self, other: &i32) -> bool {
         *self as i32 == *other 
     }
 }
 
 impl U3 {
+   #[inline]
    pub fn value(&self) -> u8 { *self as u8 }
 
+   #[inline]
    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
       transmute(other as u8)
    }
@@ -350,12 +402,14 @@ impl fmt::Debug for U3 {
  }
 
 impl fmt::Display for U3 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
  }
 
 impl fmt::LowerHex for U3 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
@@ -383,6 +437,7 @@ pub enum U4 {
 }
 
 impl From<u8> for U4 {
+    #[inline]
     fn from(other: u8) -> Self {
         assert!(other & !0b1111 == 0);
         unsafe { transmute(other as u8) }
@@ -390,12 +445,14 @@ impl From<u8> for U4 {
 }
 
 impl From<U4> for u8 {
+    #[inline]
     fn from(other: U4) -> u8 {
         other as u8
     }
 }
 
 impl From<u16> for U4 {
+    #[inline]
     fn from(other: u16) -> Self {
         assert!(other & !0b1111 == 0);
         unsafe { transmute(other as u8) }
@@ -403,12 +460,14 @@ impl From<u16> for U4 {
 }
 
 impl From<U4> for u16 {
+    #[inline]
     fn from(other: U4) -> u16 {
         other as u16
     }
 }
 
 impl From<u32> for U4 {
+    #[inline]
     fn from(other: u32) -> Self {
         assert!(other & !0b1111 == 0);
         unsafe { transmute(other as u8) }
@@ -416,12 +475,14 @@ impl From<u32> for U4 {
 }
 
 impl From<U4> for u32 {
+    #[inline]
     fn from(other: U4) -> u32 {
         other as u32
     }
 }
 
 impl From<usize> for U4 {
+    #[inline]
     fn from(other: usize) -> Self {
         assert!(other & !0b1111 == 0);
         unsafe { transmute(other as u8) }
@@ -429,12 +490,14 @@ impl From<usize> for U4 {
 }
 
 impl From<U4> for usize {
+    #[inline]
     fn from(other: U4) -> usize {
         other as usize
     }
 }
 
 impl From<i32> for U4 {
+    #[inline]
     fn from(other: i32) -> Self {
         assert!(other >= 0);
         assert!(other & !0b1111 == 0);
@@ -443,32 +506,39 @@ impl From<i32> for U4 {
 }
 
 impl From<U4> for i32 {
+    #[inline]
     fn from(other: U4) -> i32 {
         other as i32
     }
 }
 
 impl PartialEq<i32> for U4 {
+    #[inline]
     fn eq(&self, other: &i32) -> bool {
         *self as i32 == *other 
     }
 }
 
 impl U4 {
+   #[inline]
    pub fn value(&self) -> u8 { *self as u8 }
 
+   #[inline]
    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
       transmute(other as u8)
    }
@@ -481,12 +551,14 @@ impl fmt::Debug for U4 {
  }
 
 impl fmt::Display for U4 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
  }
 
 impl fmt::LowerHex for U4 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
@@ -530,6 +602,7 @@ pub enum U5 {
 }
 
 impl From<u8> for U5 {
+    #[inline]
     fn from(other: u8) -> Self {
         assert!(other & !0b11111 == 0);
         unsafe { transmute(other as u8) }
@@ -537,12 +610,14 @@ impl From<u8> for U5 {
 }
 
 impl From<U5> for u8 {
+    #[inline]
     fn from(other: U5) -> u8 {
         other as u8
     }
 }
 
 impl From<u16> for U5 {
+    #[inline]
     fn from(other: u16) -> Self {
         assert!(other & !0b11111 == 0);
         unsafe { transmute(other as u8) }
@@ -550,12 +625,14 @@ impl From<u16> for U5 {
 }
 
 impl From<U5> for u16 {
+    #[inline]
     fn from(other: U5) -> u16 {
         other as u16
     }
 }
 
 impl From<u32> for U5 {
+    #[inline]
     fn from(other: u32) -> Self {
         assert!(other & !0b11111 == 0);
         unsafe { transmute(other as u8) }
@@ -563,12 +640,14 @@ impl From<u32> for U5 {
 }
 
 impl From<U5> for u32 {
+    #[inline]
     fn from(other: U5) -> u32 {
         other as u32
     }
 }
 
 impl From<usize> for U5 {
+    #[inline]
     fn from(other: usize) -> Self {
         assert!(other & !0b11111 == 0);
         unsafe { transmute(other as u8) }
@@ -576,12 +655,14 @@ impl From<usize> for U5 {
 }
 
 impl From<U5> for usize {
+    #[inline]
     fn from(other: U5) -> usize {
         other as usize
     }
 }
 
 impl From<i32> for U5 {
+    #[inline]
     fn from(other: i32) -> Self {
         assert!(other >= 0);
         assert!(other & !0b11111 == 0);
@@ -590,32 +671,39 @@ impl From<i32> for U5 {
 }
 
 impl From<U5> for i32 {
+    #[inline]
     fn from(other: U5) -> i32 {
         other as i32
     }
 }
 
 impl PartialEq<i32> for U5 {
+    #[inline]
     fn eq(&self, other: &i32) -> bool {
         *self as i32 == *other 
     }
 }
 
 impl U5 {
+   #[inline]
    pub fn value(&self) -> u8 { *self as u8 }
 
+   #[inline]
    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
       transmute(other as u8)
    }
@@ -628,12 +716,14 @@ impl fmt::Debug for U5 {
  }
 
 impl fmt::Display for U5 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
  }
 
 impl fmt::LowerHex for U5 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
@@ -709,6 +799,7 @@ pub enum U6 {
 }
 
 impl From<u8> for U6 {
+    #[inline]
     fn from(other: u8) -> Self {
         assert!(other & !0b111111 == 0);
         unsafe { transmute(other as u8) }
@@ -716,12 +807,14 @@ impl From<u8> for U6 {
 }
 
 impl From<U6> for u8 {
+    #[inline]
     fn from(other: U6) -> u8 {
         other as u8
     }
 }
 
 impl From<u16> for U6 {
+    #[inline]
     fn from(other: u16) -> Self {
         assert!(other & !0b111111 == 0);
         unsafe { transmute(other as u8) }
@@ -729,12 +822,14 @@ impl From<u16> for U6 {
 }
 
 impl From<U6> for u16 {
+    #[inline]
     fn from(other: U6) -> u16 {
         other as u16
     }
 }
 
 impl From<u32> for U6 {
+    #[inline]
     fn from(other: u32) -> Self {
         assert!(other & !0b111111 == 0);
         unsafe { transmute(other as u8) }
@@ -742,12 +837,14 @@ impl From<u32> for U6 {
 }
 
 impl From<U6> for u32 {
+    #[inline]
     fn from(other: U6) -> u32 {
         other as u32
     }
 }
 
 impl From<usize> for U6 {
+    #[inline]
     fn from(other: usize) -> Self {
         assert!(other & !0b111111 == 0);
         unsafe { transmute(other as u8) }
@@ -755,12 +852,14 @@ impl From<usize> for U6 {
 }
 
 impl From<U6> for usize {
+    #[inline]
     fn from(other: U6) -> usize {
         other as usize
     }
 }
 
 impl From<i32> for U6 {
+    #[inline]
     fn from(other: i32) -> Self {
         assert!(other >= 0);
         assert!(other & !0b111111 == 0);
@@ -769,32 +868,39 @@ impl From<i32> for U6 {
 }
 
 impl From<U6> for i32 {
+    #[inline]
     fn from(other: U6) -> i32 {
         other as i32
     }
 }
 
 impl PartialEq<i32> for U6 {
+    #[inline]
     fn eq(&self, other: &i32) -> bool {
         *self as i32 == *other 
     }
 }
 
 impl U6 {
+   #[inline]
    pub fn value(&self) -> u8 { *self as u8 }
 
+   #[inline]
    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
       transmute(other as u8)
    }
 
+   #[inline]
    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
       transmute(other as u8)
    }
@@ -807,12 +913,14 @@ impl fmt::Debug for U6 {
  }
 
 impl fmt::Display for U6 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
  }
 
 impl fmt::LowerHex for U6 {
+    #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
        (*self as u8).fmt(f)
     }
