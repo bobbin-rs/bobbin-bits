@@ -120,32 +120,34 @@ impl PartialEq<i32> for R2 {
 }
 
 impl R2 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R2 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -290,32 +292,34 @@ impl PartialEq<i32> for R3 {
 }
 
 impl R3 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R3 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -468,32 +472,34 @@ impl PartialEq<i32> for R4 {
 }
 
 impl R4 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R4 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -654,32 +660,34 @@ impl PartialEq<i32> for R5 {
 }
 
 impl R5 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R5 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -848,32 +856,34 @@ impl PartialEq<i32> for R6 {
 }
 
 impl R6 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R6 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -1050,32 +1060,34 @@ impl PartialEq<i32> for R7 {
 }
 
 impl R7 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R7 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -1260,32 +1272,34 @@ impl PartialEq<i32> for R8 {
 }
 
 impl R8 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R8 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -1478,32 +1492,34 @@ impl PartialEq<i32> for R9 {
 }
 
 impl R9 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R9 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -1704,32 +1720,34 @@ impl PartialEq<i32> for R10 {
 }
 
 impl R10 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R10 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -1938,32 +1956,34 @@ impl PartialEq<i32> for R11 {
 }
 
 impl R11 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R11 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -2180,32 +2200,34 @@ impl PartialEq<i32> for R12 {
 }
 
 impl R12 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R12 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -2430,32 +2452,34 @@ impl PartialEq<i32> for R13 {
 }
 
 impl R13 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R13 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -2688,32 +2712,34 @@ impl PartialEq<i32> for R14 {
 }
 
 impl R14 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R14 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -2954,32 +2980,34 @@ impl PartialEq<i32> for R15 {
 }
 
 impl R15 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R15 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -3228,32 +3256,34 @@ impl PartialEq<i32> for R16 {
 }
 
 impl R16 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R16 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:01x}", *self as u8)
+        write!(f, "0x{:01x}", *self as u8)
     }
  }
 
@@ -3510,32 +3540,34 @@ impl PartialEq<i32> for R17 {
 }
 
 impl R17 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R17 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -3800,32 +3832,34 @@ impl PartialEq<i32> for R18 {
 }
 
 impl R18 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R18 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -4098,32 +4132,34 @@ impl PartialEq<i32> for R19 {
 }
 
 impl R19 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R19 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -4404,32 +4440,34 @@ impl PartialEq<i32> for R20 {
 }
 
 impl R20 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R20 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -4718,32 +4756,34 @@ impl PartialEq<i32> for R21 {
 }
 
 impl R21 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R21 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -5040,32 +5080,34 @@ impl PartialEq<i32> for R22 {
 }
 
 impl R22 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R22 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -5370,32 +5412,34 @@ impl PartialEq<i32> for R23 {
 }
 
 impl R23 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R23 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -5708,32 +5752,34 @@ impl PartialEq<i32> for R24 {
 }
 
 impl R24 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R24 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -6054,32 +6100,34 @@ impl PartialEq<i32> for R25 {
 }
 
 impl R25 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R25 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -6408,32 +6456,34 @@ impl PartialEq<i32> for R26 {
 }
 
 impl R26 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R26 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -6770,32 +6820,34 @@ impl PartialEq<i32> for R27 {
 }
 
 impl R27 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R27 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -7140,32 +7192,34 @@ impl PartialEq<i32> for R28 {
 }
 
 impl R28 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R28 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -7518,32 +7572,34 @@ impl PartialEq<i32> for R29 {
 }
 
 impl R29 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R29 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -7904,32 +7960,34 @@ impl PartialEq<i32> for R30 {
 }
 
 impl R30 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R30 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -8298,32 +8356,34 @@ impl PartialEq<i32> for R31 {
 }
 
 impl R31 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R31 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 
@@ -8700,32 +8760,34 @@ impl PartialEq<i32> for R32 {
 }
 
 impl R32 {
-   #[inline]
-   pub fn value(&self) -> usize { *self as usize }
+    #[inline]
+    pub fn value(&self) -> u8 {
+        *self as u8
+    }
 
-   #[inline]
-   pub unsafe fn from_u8_unchecked(other: u8) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u16_unchecked(other: u16) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_u32_unchecked(other: u32) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
 
-   #[inline]
-   pub unsafe fn from_usize_unchecked(other: usize) -> Self {
-      transmute(other as usize)
-   }
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
 }
 impl fmt::Debug for R32 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-       write!(f, "0x{:02x}", *self as u8)
+        write!(f, "0x{:02x}", *self as u8)
     }
  }
 

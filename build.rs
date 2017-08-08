@@ -46,6 +46,7 @@ fn gen_enums(min: usize, max: usize) -> Result<(), Error> {
 
 
     writeln!(out, "impl From<bool> for U1 {{")?;
+    writeln!(out, "    #[inline]")?;
     writeln!(out, "    fn from(other: bool) -> U1 {{")?;
     writeln!(out, "        U1::from(other as u8)")?;
     writeln!(out, "    }}")?;
@@ -53,6 +54,7 @@ fn gen_enums(min: usize, max: usize) -> Result<(), Error> {
     writeln!(out, "")?;
 
     writeln!(out, "impl U1 {{")?;
+    writeln!(out, "    #[inline]")?;
     writeln!(out, "    pub fn is_set(&self) -> bool {{")?;
     writeln!(out, "        *self as u8 != 0")?;
     writeln!(out, "    }}")?;
@@ -61,6 +63,7 @@ fn gen_enums(min: usize, max: usize) -> Result<(), Error> {
 
     writeln!(out, "impl Not for U1 {{")?;
     writeln!(out, "    type Output = U1;")?;
+    writeln!(out, "    #[inline]")?;
     writeln!(out, "    fn not(self) -> U1 {{")?;
     writeln!(out, "        U1::from(self as u8)")?;
     writeln!(out, "    }}")?;
@@ -71,7 +74,6 @@ fn gen_enums(min: usize, max: usize) -> Result<(), Error> {
 fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
     let carrier_name = "u8";
     let type_name = format!("U{}", size);
-    // println!("cargo:warning=Generating {} in {:?}", type_name, out_path);
     writeln!(out, "#[derive(PartialEq, Eq, Clone, Copy)]")?;
     writeln!(out, "#[repr({})]", carrier_name)?;
     writeln!(out, "pub enum {} {{", type_name)?;
@@ -113,34 +115,36 @@ fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
     writeln!(out, "")?;
        
     writeln!(out, "impl {} {{", type_name)?;
-    writeln!(out, "   #[inline]")?;
-    writeln!(out, "   pub fn value(&self) -> u8 {{ *self as u8 }}")?;
+    writeln!(out, "    #[inline]")?;
+    writeln!(out, "    pub fn value(&self) -> u8 {{")?;
+    writeln!(out, "        *self as u8")?;
+    writeln!(out, "    }}")?;
     writeln!(out, "")?;    
-    writeln!(out, "   #[inline]")?;
-    writeln!(out, "   pub unsafe fn from_u8_unchecked(other: u8) -> Self {{")?;
-    writeln!(out, "      transmute(other as {})", carrier_name)?;
-    writeln!(out, "   }}")?;
+    writeln!(out, "    #[inline]")?;
+    writeln!(out, "    pub unsafe fn from_u8_unchecked(other: u8) -> Self {{")?;
+    writeln!(out, "        transmute(other as {})", carrier_name)?;
+    writeln!(out, "    }}")?;
     writeln!(out, "")?;
-    writeln!(out, "   #[inline]")?;
-    writeln!(out, "   pub unsafe fn from_u16_unchecked(other: u16) -> Self {{")?;
-    writeln!(out, "      transmute(other as {})", carrier_name)?;
-    writeln!(out, "   }}")?;
+    writeln!(out, "    #[inline]")?;
+    writeln!(out, "    pub unsafe fn from_u16_unchecked(other: u16) -> Self {{")?;
+    writeln!(out, "        transmute(other as {})", carrier_name)?;
+    writeln!(out, "    }}")?;
     writeln!(out, "")?;
-    writeln!(out, "   #[inline]")?;
-    writeln!(out, "   pub unsafe fn from_u32_unchecked(other: u32) -> Self {{")?;
-    writeln!(out, "      transmute(other as {})", carrier_name)?;
-    writeln!(out, "   }}")?;
+    writeln!(out, "    #[inline]")?;
+    writeln!(out, "    pub unsafe fn from_u32_unchecked(other: u32) -> Self {{")?;
+    writeln!(out, "        transmute(other as {})", carrier_name)?;
+    writeln!(out, "    }}")?;
     writeln!(out, "")?;
-    writeln!(out, "   #[inline]")?;
-    writeln!(out, "   pub unsafe fn from_usize_unchecked(other: usize) -> Self {{")?;
-    writeln!(out, "      transmute(other as {})", carrier_name)?;
-    writeln!(out, "   }}")?;
+    writeln!(out, "    #[inline]")?;
+    writeln!(out, "    pub unsafe fn from_usize_unchecked(other: usize) -> Self {{")?;
+    writeln!(out, "        transmute(other as {})", carrier_name)?;
+    writeln!(out, "    }}")?;
     writeln!(out, "}}")?;
     writeln!(out, "")?;
 
     writeln!(out, "impl fmt::Debug for {} {{", type_name)?;
     writeln!(out, "    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{")?;
-    writeln!(out, "       write!(f, \"0b{{:0width$b}}\", *self as u8, width={})", size)?;
+    writeln!(out, "        write!(f, \"0b{{:0width$b}}\", *self as u8, width={})", size)?;
     writeln!(out, "    }}")?;
     writeln!(out, " }}")?;
     writeln!(out, "")?;
@@ -149,7 +153,7 @@ fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
     writeln!(out, "impl fmt::Display for {} {{", type_name)?;
     writeln!(out, "    #[inline]")?;    
     writeln!(out, "    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{")?;
-    writeln!(out, "       (*self as u8).fmt(f)")?;
+    writeln!(out, "        (*self as u8).fmt(f)")?;
     writeln!(out, "    }}")?;
     writeln!(out, " }}")?;
     writeln!(out, "")?;
@@ -157,7 +161,7 @@ fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
     writeln!(out, "impl fmt::LowerHex for {} {{", type_name)?;
     writeln!(out, "    #[inline]")?;    
     writeln!(out, "    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{")?;
-    writeln!(out, "       (*self as u8).fmt(f)")?;
+    writeln!(out, "        (*self as u8).fmt(f)")?;
     writeln!(out, "    }}")?;
     writeln!(out, " }}")?;
     writeln!(out, "")?;
@@ -239,33 +243,35 @@ fn gen_range_type(out: &mut File, size: usize) -> Result<(), Error> {
 
        
     writeln!(out, "impl {} {{", type_name)?;
-    writeln!(out, "   #[inline]")?;
-    writeln!(out, "   pub fn value(&self) -> usize {{ *self as usize }}")?;
+    writeln!(out, "    #[inline]")?;
+    writeln!(out, "    pub fn value(&self) -> u8 {{")?;
+    writeln!(out, "        *self as u8")?;
+    writeln!(out, "    }}")?;
     writeln!(out, "")?;    
-    writeln!(out, "   #[inline]")?;
-    writeln!(out, "   pub unsafe fn from_u8_unchecked(other: u8) -> Self {{")?;
-    writeln!(out, "      transmute(other as {})", carrier_name)?;
-    writeln!(out, "   }}")?;
+    writeln!(out, "    #[inline]")?;
+    writeln!(out, "    pub unsafe fn from_u8_unchecked(other: u8) -> Self {{")?;
+    writeln!(out, "        transmute(other as {})", carrier_name)?;
+    writeln!(out, "    }}")?;
     writeln!(out, "")?;
-    writeln!(out, "   #[inline]")?;
-    writeln!(out, "   pub unsafe fn from_u16_unchecked(other: u16) -> Self {{")?;
-    writeln!(out, "      transmute(other as {})", carrier_name)?;
-    writeln!(out, "   }}")?;
+    writeln!(out, "    #[inline]")?;
+    writeln!(out, "    pub unsafe fn from_u16_unchecked(other: u16) -> Self {{")?;
+    writeln!(out, "        transmute(other as {})", carrier_name)?;
+    writeln!(out, "    }}")?;
     writeln!(out, "")?;
-    writeln!(out, "   #[inline]")?;
-    writeln!(out, "   pub unsafe fn from_u32_unchecked(other: u32) -> Self {{")?;
-    writeln!(out, "      transmute(other as {})", carrier_name)?;
-    writeln!(out, "   }}")?;
+    writeln!(out, "    #[inline]")?;
+    writeln!(out, "    pub unsafe fn from_u32_unchecked(other: u32) -> Self {{")?;
+    writeln!(out, "        transmute(other as {})", carrier_name)?;
+    writeln!(out, "    }}")?;
     writeln!(out, "")?;
-    writeln!(out, "   #[inline]")?;
-    writeln!(out, "   pub unsafe fn from_usize_unchecked(other: usize) -> Self {{")?;
-    writeln!(out, "      transmute(other as {})", carrier_name)?;
-    writeln!(out, "   }}")?;
+    writeln!(out, "    #[inline]")?;
+    writeln!(out, "    pub unsafe fn from_usize_unchecked(other: usize) -> Self {{")?;
+    writeln!(out, "        transmute(other as {})", carrier_name)?;
+    writeln!(out, "    }}")?;
     writeln!(out, "}}")?;
 
     writeln!(out, "impl fmt::Debug for {} {{", type_name)?;
     writeln!(out, "    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {{")?;
-    writeln!(out, "       write!(f, \"0x{{:0{}x}}\", *self as u8)", width)?;
+    writeln!(out, "        write!(f, \"0x{{:0{}x}}\", *self as u8)", width)?;
     writeln!(out, "    }}")?;
     writeln!(out, " }}")?;
     writeln!(out, "")?;
