@@ -116,8 +116,8 @@ fn gen_enum_type(out: &mut File,  size: usize) -> Result<(), Error> {
        
     writeln!(out, "impl {} {{", type_name)?;
     writeln!(out, "    #[inline]")?;
-    writeln!(out, "    pub fn value(&self) -> u8 {{")?;
-    writeln!(out, "        *self as u8")?;
+    writeln!(out, "    pub fn value(&self) -> {} {{", carrier_name)?;
+    writeln!(out, "        *self as {}", carrier_name)?;
     writeln!(out, "    }}")?;
     writeln!(out, "")?;    
     writeln!(out, "    #[inline]")?;
@@ -244,8 +244,8 @@ fn gen_range_type(out: &mut File, size: usize) -> Result<(), Error> {
        
     writeln!(out, "impl {} {{", type_name)?;
     writeln!(out, "    #[inline]")?;
-    writeln!(out, "    pub fn value(&self) -> u8 {{")?;
-    writeln!(out, "        *self as u8")?;
+    writeln!(out, "    pub fn value(&self) -> {} {{", carrier_name)?;
+    writeln!(out, "        *self as {}", carrier_name)?;
     writeln!(out, "    }}")?;
     writeln!(out, "")?;    
     writeln!(out, "    #[inline]")?;

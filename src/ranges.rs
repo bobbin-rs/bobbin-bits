@@ -121,8 +121,8 @@ impl PartialEq<i32> for R2 {
 
 impl R2 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -293,8 +293,8 @@ impl PartialEq<i32> for R3 {
 
 impl R3 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -473,8 +473,8 @@ impl PartialEq<i32> for R4 {
 
 impl R4 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -661,8 +661,8 @@ impl PartialEq<i32> for R5 {
 
 impl R5 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -857,8 +857,8 @@ impl PartialEq<i32> for R6 {
 
 impl R6 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -1061,8 +1061,8 @@ impl PartialEq<i32> for R7 {
 
 impl R7 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -1273,8 +1273,8 @@ impl PartialEq<i32> for R8 {
 
 impl R8 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -1493,8 +1493,8 @@ impl PartialEq<i32> for R9 {
 
 impl R9 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -1721,8 +1721,8 @@ impl PartialEq<i32> for R10 {
 
 impl R10 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -1957,8 +1957,8 @@ impl PartialEq<i32> for R11 {
 
 impl R11 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -2201,8 +2201,8 @@ impl PartialEq<i32> for R12 {
 
 impl R12 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -2453,8 +2453,8 @@ impl PartialEq<i32> for R13 {
 
 impl R13 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -2713,8 +2713,8 @@ impl PartialEq<i32> for R14 {
 
 impl R14 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -2981,8 +2981,8 @@ impl PartialEq<i32> for R15 {
 
 impl R15 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -3257,8 +3257,8 @@ impl PartialEq<i32> for R16 {
 
 impl R16 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -3541,8 +3541,8 @@ impl PartialEq<i32> for R17 {
 
 impl R17 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -3833,8 +3833,8 @@ impl PartialEq<i32> for R18 {
 
 impl R18 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -4133,8 +4133,8 @@ impl PartialEq<i32> for R19 {
 
 impl R19 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -4441,8 +4441,8 @@ impl PartialEq<i32> for R20 {
 
 impl R20 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -4757,8 +4757,8 @@ impl PartialEq<i32> for R21 {
 
 impl R21 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -5081,8 +5081,8 @@ impl PartialEq<i32> for R22 {
 
 impl R22 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -5413,8 +5413,8 @@ impl PartialEq<i32> for R23 {
 
 impl R23 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -5753,8 +5753,8 @@ impl PartialEq<i32> for R24 {
 
 impl R24 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -6101,8 +6101,8 @@ impl PartialEq<i32> for R25 {
 
 impl R25 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -6457,8 +6457,8 @@ impl PartialEq<i32> for R26 {
 
 impl R26 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -6821,8 +6821,8 @@ impl PartialEq<i32> for R27 {
 
 impl R27 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -7193,8 +7193,8 @@ impl PartialEq<i32> for R28 {
 
 impl R28 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -7573,8 +7573,8 @@ impl PartialEq<i32> for R29 {
 
 impl R29 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -7961,8 +7961,8 @@ impl PartialEq<i32> for R30 {
 
 impl R30 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -8357,8 +8357,8 @@ impl PartialEq<i32> for R31 {
 
 impl R31 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
@@ -8761,8 +8761,8 @@ impl PartialEq<i32> for R32 {
 
 impl R32 {
     #[inline]
-    pub fn value(&self) -> u8 {
-        *self as u8
+    pub fn value(&self) -> usize {
+        *self as usize
     }
 
     #[inline]
