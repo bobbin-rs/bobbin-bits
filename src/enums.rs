@@ -117,6 +117,31 @@ impl U1 {
     pub unsafe fn from_usize_unchecked(other: usize) -> Self {
         transmute(other as u8)
     }
+
+    #[inline]
+    pub fn into_u8(self) -> u8 {
+        self as u8
+    }
+
+    #[inline]
+    pub fn into_u16(self) -> u16 {
+        self as u16
+    }
+
+    #[inline]
+    pub fn into_u32(self) -> u32 {
+        self as u32
+    }
+
+    #[inline]
+    pub fn into_usize(self) -> usize {
+        self as usize
+    }
+
+    #[inline]
+    pub fn into_i32(self) -> i32 {
+        self as i32
+    }
 }
 
 impl fmt::Debug for U1 {
@@ -255,6 +280,31 @@ impl U2 {
     #[inline]
     pub unsafe fn from_usize_unchecked(other: usize) -> Self {
         transmute(other as u8)
+    }
+
+    #[inline]
+    pub fn into_u8(self) -> u8 {
+        self as u8
+    }
+
+    #[inline]
+    pub fn into_u16(self) -> u16 {
+        self as u16
+    }
+
+    #[inline]
+    pub fn into_u32(self) -> u32 {
+        self as u32
+    }
+
+    #[inline]
+    pub fn into_usize(self) -> usize {
+        self as usize
+    }
+
+    #[inline]
+    pub fn into_i32(self) -> i32 {
+        self as i32
     }
 }
 
@@ -398,6 +448,31 @@ impl U3 {
     #[inline]
     pub unsafe fn from_usize_unchecked(other: usize) -> Self {
         transmute(other as u8)
+    }
+
+    #[inline]
+    pub fn into_u8(self) -> u8 {
+        self as u8
+    }
+
+    #[inline]
+    pub fn into_u16(self) -> u16 {
+        self as u16
+    }
+
+    #[inline]
+    pub fn into_u32(self) -> u32 {
+        self as u32
+    }
+
+    #[inline]
+    pub fn into_usize(self) -> usize {
+        self as usize
+    }
+
+    #[inline]
+    pub fn into_i32(self) -> i32 {
+        self as i32
     }
 }
 
@@ -549,6 +624,31 @@ impl U4 {
     #[inline]
     pub unsafe fn from_usize_unchecked(other: usize) -> Self {
         transmute(other as u8)
+    }
+
+    #[inline]
+    pub fn into_u8(self) -> u8 {
+        self as u8
+    }
+
+    #[inline]
+    pub fn into_u16(self) -> u16 {
+        self as u16
+    }
+
+    #[inline]
+    pub fn into_u32(self) -> u32 {
+        self as u32
+    }
+
+    #[inline]
+    pub fn into_usize(self) -> usize {
+        self as usize
+    }
+
+    #[inline]
+    pub fn into_i32(self) -> i32 {
+        self as i32
     }
 }
 
@@ -716,6 +816,31 @@ impl U5 {
     #[inline]
     pub unsafe fn from_usize_unchecked(other: usize) -> Self {
         transmute(other as u8)
+    }
+
+    #[inline]
+    pub fn into_u8(self) -> u8 {
+        self as u8
+    }
+
+    #[inline]
+    pub fn into_u16(self) -> u16 {
+        self as u16
+    }
+
+    #[inline]
+    pub fn into_u32(self) -> u32 {
+        self as u32
+    }
+
+    #[inline]
+    pub fn into_usize(self) -> usize {
+        self as usize
+    }
+
+    #[inline]
+    pub fn into_i32(self) -> i32 {
+        self as i32
     }
 }
 
@@ -915,6 +1040,31 @@ impl U6 {
     #[inline]
     pub unsafe fn from_usize_unchecked(other: usize) -> Self {
         transmute(other as u8)
+    }
+
+    #[inline]
+    pub fn into_u8(self) -> u8 {
+        self as u8
+    }
+
+    #[inline]
+    pub fn into_u16(self) -> u16 {
+        self as u16
+    }
+
+    #[inline]
+    pub fn into_u32(self) -> u32 {
+        self as u32
+    }
+
+    #[inline]
+    pub fn into_usize(self) -> usize {
+        self as usize
+    }
+
+    #[inline]
+    pub fn into_i32(self) -> i32 {
+        self as i32
     }
 }
 

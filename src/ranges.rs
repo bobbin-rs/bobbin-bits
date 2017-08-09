@@ -3,6 +3,170 @@ use core::fmt;
 
 #[derive(PartialEq, Eq, Clone, Copy)]
 #[repr(usize)]
+pub enum R1 {
+    X0 = 0x0,
+}
+
+impl From<u8> for R1 {
+    #[inline]
+    fn from(other: u8) -> Self {
+        assert!(other < 0x1);
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R1> for u8 {
+    #[inline]
+    fn from(other: R1) -> u8 {
+        other as u8
+    }
+}
+
+impl PartialEq<u8> for R1 {
+    #[inline]
+    fn eq(&self, other: &u8) -> bool {
+        *self as usize == *other as usize
+    }
+}
+
+impl From<u16> for R1 {
+    #[inline]
+    fn from(other: u16) -> Self {
+        assert!(other < 0x1);
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R1> for u16 {
+    #[inline]
+    fn from(other: R1) -> u16 {
+        other as u16
+    }
+}
+
+impl PartialEq<u16> for R1 {
+    #[inline]
+    fn eq(&self, other: &u16) -> bool {
+        *self as usize == *other as usize
+    }
+}
+
+impl From<u32> for R1 {
+    #[inline]
+    fn from(other: u32) -> Self {
+        assert!(other < 0x1);
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R1> for u32 {
+    #[inline]
+    fn from(other: R1) -> u32 {
+        other as u32
+    }
+}
+
+impl PartialEq<u32> for R1 {
+    #[inline]
+    fn eq(&self, other: &u32) -> bool {
+        *self as usize == *other as usize
+    }
+}
+
+impl From<usize> for R1 {
+    #[inline]
+    fn from(other: usize) -> Self {
+        assert!(other < 0x1);
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R1> for usize {
+    #[inline]
+    fn from(other: R1) -> usize {
+        other as usize
+    }
+}
+
+impl PartialEq<usize> for R1 {
+    #[inline]
+    fn eq(&self, other: &usize) -> bool {
+        *self as usize == *other as usize
+    }
+}
+
+impl From<i32> for R1 {
+    #[inline]
+    fn from(other: i32) -> Self {
+        assert!(other >= 0);
+        assert!(other < 0x1);
+        unsafe { transmute(other as usize) }
+    }
+}
+
+impl From<R1> for i32 {
+    #[inline]
+    fn from(other: R1) -> i32 {
+        other as i32
+    }
+}
+
+impl PartialEq<i32> for R1 {
+    #[inline]
+    fn eq(&self, other: &i32) -> bool {
+        *self as usize == *other as usize
+    }
+}
+
+impl R1 {
+    #[inline]
+    pub fn value(&self) -> usize {
+        *self as usize
+    }
+
+    #[inline]
+    pub unsafe fn from_u8_unchecked(other: u8) -> Self {
+        transmute(other as usize)
+    }
+
+    #[inline]
+    pub unsafe fn from_u16_unchecked(other: u16) -> Self {
+        transmute(other as usize)
+    }
+
+    #[inline]
+    pub unsafe fn from_u32_unchecked(other: u32) -> Self {
+        transmute(other as usize)
+    }
+
+    #[inline]
+    pub unsafe fn from_usize_unchecked(other: usize) -> Self {
+        transmute(other as usize)
+    }
+}
+
+impl fmt::Debug for R1 {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "0x{:01x}", *self as u8)
+    }
+ }
+
+impl fmt::Display for R1 {
+    #[inline]
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+       (*self as u8).fmt(f)
+    }
+ }
+
+impl fmt::LowerHex for R1 {
+    #[inline]
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+       (*self as u8).fmt(f)
+    }
+ }
+
+#[derive(PartialEq, Eq, Clone, Copy)]
+#[repr(usize)]
 pub enum R2 {
     X0 = 0x0,
     X1 = 0x1,
@@ -145,6 +309,7 @@ impl R2 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R2 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -317,6 +482,7 @@ impl R3 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R3 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -497,6 +663,7 @@ impl R4 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R4 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -685,6 +852,7 @@ impl R5 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R5 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -881,6 +1049,7 @@ impl R6 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R6 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -1085,6 +1254,7 @@ impl R7 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R7 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -1297,6 +1467,7 @@ impl R8 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R8 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -1517,6 +1688,7 @@ impl R9 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R9 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -1745,6 +1917,7 @@ impl R10 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R10 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -1981,6 +2154,7 @@ impl R11 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R11 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -2225,6 +2399,7 @@ impl R12 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R12 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -2477,6 +2652,7 @@ impl R13 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R13 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -2737,6 +2913,7 @@ impl R14 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R14 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -3005,6 +3182,7 @@ impl R15 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R15 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -3281,6 +3459,7 @@ impl R16 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R16 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:01x}", *self as u8)
@@ -3565,6 +3744,7 @@ impl R17 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R17 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -3857,6 +4037,7 @@ impl R18 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R18 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -4157,6 +4338,7 @@ impl R19 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R19 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -4465,6 +4647,7 @@ impl R20 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R20 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -4781,6 +4964,7 @@ impl R21 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R21 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -5105,6 +5289,7 @@ impl R22 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R22 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -5437,6 +5622,7 @@ impl R23 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R23 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -5777,6 +5963,7 @@ impl R24 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R24 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -6125,6 +6312,7 @@ impl R25 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R25 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -6481,6 +6669,7 @@ impl R26 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R26 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -6845,6 +7034,7 @@ impl R27 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R27 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -7217,6 +7407,7 @@ impl R28 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R28 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -7597,6 +7788,7 @@ impl R29 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R29 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -7985,6 +8177,7 @@ impl R30 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R30 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -8381,6 +8574,7 @@ impl R31 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R31 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)
@@ -8785,6 +8979,7 @@ impl R32 {
         transmute(other as usize)
     }
 }
+
 impl fmt::Debug for R32 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "0x{:02x}", *self as u8)

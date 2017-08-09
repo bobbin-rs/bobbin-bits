@@ -30,6 +30,31 @@ macro_rules! impl_u8 {
             pub unsafe fn from_usize_unchecked(other: usize) -> Self {
                 $B(other as u8)
             }
+
+            #[inline]
+            pub fn into_u8(self) -> u8 {
+                self.0 as u8
+            }
+
+            #[inline]
+            pub fn into_u16(self) -> u16 {
+                self.0 as u16
+            }
+
+            #[inline]
+            pub fn into_u32(self) -> u32 {
+                self.0 as u32
+            }
+
+            #[inline]
+            pub fn into_usize(self) -> usize {
+                self.0 as usize
+            }
+
+            #[inline]
+            pub fn into_i32(self) -> i32 {
+                self.0 as i32
+            }            
         }
 
         impl From<i32> for $B {
@@ -69,6 +94,13 @@ macro_rules! impl_u8 {
             #[inline]
             fn from(other: u8) -> Self {
                 $B(other as u8)
+            }
+        }
+
+        impl From<$B> for usize {
+            #[inline]
+            fn from(other: $B) -> Self {
+                other.0 as usize
             }
         }
 
@@ -157,8 +189,27 @@ macro_rules! impl_u16 {
             #[inline]
             pub unsafe fn from_usize_unchecked(other: usize) -> Self {
                 $B(other as u16)
-            }            
-        }
+            }        
+
+            #[inline]
+            pub fn into_u16(self) -> u16 {
+                self.0 as u16
+            }
+
+            #[inline]
+            pub fn into_u32(self) -> u32 {
+                self.0 as u32
+            }
+
+            #[inline]
+            pub fn into_usize(self) -> usize {
+                self.0 as usize
+            }
+
+            #[inline]
+            pub fn into_i32(self) -> i32 {
+                self.0 as i32
+            }                   }
 
         impl From<i32> for $B {
             #[inline]
@@ -197,6 +248,13 @@ macro_rules! impl_u16 {
             #[inline]
             fn from(other: u8) -> Self {
                 $B(other as u16)
+            }
+        }
+
+        impl From<$B> for usize {
+            #[inline]
+            fn from(other: $B) -> Self {
+                other.0 as usize
             }
         }
 
@@ -286,7 +344,17 @@ macro_rules! impl_u32 {
             #[inline]
             pub unsafe fn from_usize_unchecked(other: usize) -> Self {
                 $B(other as u32)
-            }            
+            }
+
+            #[inline]
+            pub fn into_u32(self) -> u32 {
+                self.0 as u32
+            }
+
+            #[inline]
+            pub fn into_usize(self) -> usize {
+                self.0 as usize
+            }      
         }
 
         impl From<i32> for $B {
@@ -325,6 +393,13 @@ macro_rules! impl_u32 {
             #[inline]
             fn from(other: u8) -> Self {
                 $B(other as u32)
+            }
+        }
+
+        impl From<$B> for usize {
+            #[inline]
+            fn from(other: $B) -> Self {
+                other.0 as usize
             }
         }
 
