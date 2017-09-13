@@ -1,4 +1,4 @@
-# Bobbin Bits
+ # Bobbin Bits
 
 Bobbin Bits defines a set of types for representing binary numbers of width 1 to 32 and ranged values from 1 to 32. These are intended to be useful for representing bit fields within peripheral registers and network protocols and for indexing small collections.
 
@@ -101,7 +101,7 @@ The following additional traits are also supported for U1:
 Here's an example of using the U4 bit field type:
 
 ```
-use bobbin_bits::U4;
+use bobbin_bits::*;
 
 // Implemented using a single exhaustive match statement
 fn to_hex_char<V: Into<U4>>(v: V) -> char {
@@ -136,7 +136,7 @@ assert_eq!(c, '8');
 
 // Call with a u8, v.into() performs range check.
 let c = to_hex_char(8_u8);
-assert_eq!(c, '8')
+assert_eq!(c, '8');
 
 // Perform range check from u32 outside of function
 let v: U4 = 8u32.into();
@@ -161,6 +161,8 @@ assert_eq!(c, '8');
 Using the U12 and U13 types:
 
 ```
+use bobbin_bits::*;
+
 fn double_sample<V: Into<U12>>(v: V) -> U13 {
     let v = v.into();
     // Extracts into u16, multiplies, then wraps into U13
@@ -177,7 +179,7 @@ assert_eq!(v, U13::from(2000));
 
 // When converting from types that cannot overflow the range (such as u8),
 // no range checking is needed.
-assert!(v > U13::from(200u8));
+assert_eq!(double_sample(100), U13::from(200u8));
 
 // You can always access the underlying representation of the value
 assert_eq!(v.value(), 2000u16);
@@ -185,7 +187,10 @@ assert_eq!(v.value(), 2000u16);
 ```
 
 Using the R4 range type, which supports values 0 to 3:
+
 ```
+use bobbin_bits::*;
+
 // Using R4 in an exhaustive match
 fn get_port_name<I: Into<R4>>(index: I) -> &'static str {
     let index = index.into();
@@ -203,7 +208,7 @@ pub const PORT_ADDR: [u32;4] = [0x1000_0000, 0x1000_2000, 0x1000_3000, 0x1000_40
 fn get_port_address<I: Into<R4>>(index: I) -> u32 {
     // Is the optimizing compiler smart enough to eliminate the
     // bounds check here?
-    PORT_ADDR[index.into()]
+    PORT_ADDR[index.into() as usize]
 }
 
 // From<i32> is implemented, range check happens in get_port_name()
