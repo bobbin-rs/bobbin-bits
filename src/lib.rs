@@ -1,25 +1,28 @@
 #![no_std]
-
-//! # Bobbin Bits
+//! # bobbin-bits
 //!
-//!Bobbin Bits defines a set of types for representing binary numbers of width 1 to 32 and ranged values from 1 to 32. These are intended to be useful for representing bit fields within peripheral registers and network protocols and for indexing small collections.
+//!bobbin-bits defines types representing binary numbers of width 1 to 32 and ranged values from 1 to 32. These are useful for representing small bit fields and for indexing small collections.
 //!
 //!## Motivation
 //!
-//!Rust currently does not directly support integer range types or unsigned integer types that 
-//!are not u8, u16, u32, u64 or u128. Because of this, values are commonly stored in the next largest integer type and run-time range checks are used at function boundaries. Also,
-//!matches usually require a fall-through handler even if all of the intended values
-//!are covered.
+//!Rust doesn't currently have direct support for unsigned integer types for widths other than u8, u16, u32, u64 and u128 or for ranged integers. Applications instead must store values in a larger primitive type and then check
+//!that the values stay in the correct range, typically at function boundaries. This is error prone and can
+//!impact performance.
 //!
-//!One solution is to define ad-hoc structs or enums to represent domain-specific values
-//!that are known to be in a specific range. This can eliminate run-time range checks at the cost of a large amount of boilerplate for managing conversions to and from these values. 
+//!One solution is to define structs or enums to represent domain-specific values that are known to be in a specific range. This can eliminate run-time range checks at the cost of a large amount of boilerplate for managing conversions to and from these values. 
 //!
 //!For some APIs the code for managing these types ends up much larger than the API itself.
 //!It can also prove to be a significant documentation challenge and barrier to learning the API. Having a unique type for almost every function parameter in an API is undesirable.
 //!
-//!This crate takes a different approach, defining a set of general-purpose types
-//!useful for representing bit fields <= 32 bits and integer ranges from 1 through 32. Each
-//!type supports conversions to and from Rust unsigned integer types and i32, performing range checking where needed.
+//!This crate takes a different approach, defining a set of general-purpose types useful 
+//!for representing bit fields <= 32 bits and integer ranges from 1 through 32. Conversion
+//!traits are defined to and from Rust unsigned integer types and i32, performing
+//!range checking where needed.
+//!
+//!## Panics
+//!
+//!These types will panic if a conversion fails because the value is out of range for the
+//!destination type.
 //!
 //!## Representation
 //!
@@ -41,7 +44,6 @@
 //!}
 //!```
 //!
-//!This allows zero-cost conversions when values are known to fit within the type.
 //!
 //!Similarly, R1 through R32 are enums with repr(usize). Their members are named with
 //!the prefix "X" followed by the hexadecimal represention of the number, single digits
@@ -72,9 +74,9 @@
 //!```
 //!
 //!Unfortunately there is no literal representation of these values, so they must be
-//!constructed using `From<T>` conversions.
+//!constructed using `From<T>` conversions or the `unchecked_from_xxx` functions
 //!
-//!## Supported Traits
+//!## Traits
 //!
 //!The following traits are currently supported for all types:
 //!
@@ -100,7 +102,7 @@
 //!
 //!## Examples
 //!
-//!Here's an example of using the U4 bit field type:
+//!Here's an example using the U4 bit field type:
 //!
 //!```
 //!use bobbin_bits::*;
