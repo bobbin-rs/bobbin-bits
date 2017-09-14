@@ -2,5 +2,11 @@
 name = "bobbin-bits"
 version = "0.1.0"
 authors = ["Jonathan Soo <jcsoo@agora.com>"]
+description = "Small bit fields and ranged integers"
+homepage = "https://github.com/bobbin-rs/bobbin-bits/"
+repository = "https://github.com/bobbin-rs/bobbin-bits/"
+readme = "README.md"
+keywords = ["embedded"]
+license = "MIT/Apache-2.0"
 
 [dependencies]
