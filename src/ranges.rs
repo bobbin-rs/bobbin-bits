@@ -118,29 +118,64 @@ macro_rules! impl_range {
 
         impl $id {
             #[inline]
+            /// Returns the primitive representation of the value.            
             pub fn value(&self) -> usize {
                 *self as usize
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u8_unchecked(other: u8) -> Self {
                 transmute(other as usize)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u16_unchecked(other: u16) -> Self {
                 transmute(other as usize)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u32_unchecked(other: u32) -> Self {
                 transmute(other as usize)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_usize_unchecked(other: usize) -> Self {
                 transmute(other as usize)
             }
+            
+            #[inline]
+            /// Returns the value as an u8.
+            pub fn into_u8(self) -> u8 {
+                self as u8
+            }
+
+            #[inline]
+            /// Returns the value as an u16.
+            pub fn into_u16(self) -> u16 {
+                self as u16
+            }
+
+            #[inline]
+            /// Returns the value as an u32.            
+            pub fn into_u32(self) -> u32 {
+                self as u32
+            }
+
+            #[inline]
+            /// Returns the value as an usize.            
+            pub fn into_usize(self) -> usize {
+                self as usize
+            }
+
+            #[inline]
+            /// Returns the value as an i32.
+            pub fn into_i32(self) -> i32 {
+                self as i32
+            }            
         }
 
         impl fmt::Debug for $id {

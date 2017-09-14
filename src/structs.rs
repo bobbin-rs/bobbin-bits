@@ -5,51 +5,61 @@ macro_rules! impl_u8 {
 
         impl $B {
             #[inline]
+            /// Returns the primitive representation of the value.            
             pub fn value(&self) -> u8 {
                 self.0
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u8_unchecked(other: u8) -> Self {
                 $B(other as u8)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u16_unchecked(other: u16) -> Self {
                 $B(other as u8)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u32_unchecked(other: u32) -> Self {
                 $B(other as u8)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_usize_unchecked(other: usize) -> Self {
                 $B(other as u8)
             }
 
             #[inline]
+            /// Returns the value as an u8.
             pub fn into_u8(self) -> u8 {
                 self.0 as u8
             }
 
             #[inline]
+            /// Returns the value as an u16.
             pub fn into_u16(self) -> u16 {
                 self.0 as u16
             }
 
             #[inline]
+            /// Returns the value as an u32.            
             pub fn into_u32(self) -> u32 {
                 self.0 as u32
             }
 
             #[inline]
+            /// Returns the value as an usize.
             pub fn into_usize(self) -> usize {
                 self.0 as usize
             }
 
             #[inline]
+            /// Returns the value as an i32.
             pub fn into_i32(self) -> i32 {
                 self.0 as i32
             }            
@@ -165,46 +175,55 @@ macro_rules! impl_u16 {
 
         impl $B {
             #[inline]
+            /// Returns the primitive representation of the value.            
             pub fn value(&self) -> u16 {
                 self.0
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u8_unchecked(other: u8) -> Self {
                 $B(other as u16)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u16_unchecked(other: u16) -> Self {
                 $B(other as u16)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u32_unchecked(other: u32) -> Self {
                 $B(other as u16)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_usize_unchecked(other: usize) -> Self {
                 $B(other as u16)
             }        
 
             #[inline]
+            /// Returns the value as an u16.
             pub fn into_u16(self) -> u16 {
                 self.0 as u16
             }
 
             #[inline]
+            /// Returns the value as an u32.
             pub fn into_u32(self) -> u32 {
                 self.0 as u32
             }
 
             #[inline]
+            /// Returns the value as an usize.
             pub fn into_usize(self) -> usize {
                 self.0 as usize
             }
 
             #[inline]
+            /// Returns the value as an ui32.
             pub fn into_i32(self) -> i32 {
                 self.0 as i32
             }                   }
@@ -320,36 +339,43 @@ macro_rules! impl_u32 {
 
         impl $B {
             #[inline]
+            /// Returns the primitive representation of the value.            
             pub fn value(&self) -> u32 {
                 self.0
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u8_unchecked(other: u8) -> Self {
                 $B(other as u32)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u16_unchecked(other: u16) -> Self {
                 $B(other as u32)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_u32_unchecked(other: u32) -> Self {
                 $B(other as u32)
             }
 
             #[inline]
+            /// Constructs the value without a range check.
             pub unsafe fn from_usize_unchecked(other: usize) -> Self {
                 $B(other as u32)
             }
 
             #[inline]
+            /// Returns the value as a u32.
             pub fn into_u32(self) -> u32 {
                 self.0 as u32
             }
 
             #[inline]
+            /// Returns the value as a usize.
             pub fn into_usize(self) -> usize {
                 self.0 as usize
             }      
@@ -460,6 +486,3 @@ macro_rules! impl_u32 {
         }
     )
 }
-
-// impl_u8!(U5, 0b1_1111);
-// impl_u8!(U6, 0b11_1111);
