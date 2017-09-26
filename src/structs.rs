@@ -384,7 +384,7 @@ macro_rules! impl_u32 {
         impl From<i32> for $B {
             #[inline]
             fn from(other: i32) -> Self {
-                assert!(other > 0);
+                assert!(other >= 0);
                 assert!(other as u32 & !$m == 0);
                 $B(other as u32)
             }

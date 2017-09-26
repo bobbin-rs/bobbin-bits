@@ -1191,6 +1191,9 @@ mod tests {
             v
         }
 
+        let x: U16 = U16::from(0);
+        assert_eq!(x.value(), 0);
+
         let x: U16 = U16::from(0b1111);
         assert_eq!(use_b16(x), x);
         assert_eq!(use_b16(0b1111), x);
