@@ -1,6 +1,6 @@
 [package]
 name = "bobbin-bits"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Jonathan Soo <jcsoo@agora.com>"]
 description = "Small bit fields and ranged integers"
 homepage = "https://github.com/bobbin-rs/bobbin-bits/"
